@@ -169,132 +169,131 @@ const Dashboard = () => {
 
     return (
         <motion.div
-  initial={{ opacity: 0, y: 24 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.25, ease: "easeOut" }} 
-  className="min-h-screen bg-gray-900 text-white"
-  style={{ backgroundColor: "#111827" }} 
->
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="min-h-screen bg-gray-900 text-white"
+          style={{ backgroundColor: "#111827" }}
+        >
           {/* Header */}
           <header className="bg-gray-800 shadow-[inset_-1px_-1px_3px_rgba(255,255,255,0.05),inset_1px_1px_3px_rgba(0,0,0,0.3)] border-b border-gray-700 sticky top-0 z-40">
-              <div className="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
-                  <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05)] flex items-center justify-center">
-                      <BiAccessibility className="text-white text-3xl mx-auto" />
-                      </div>
-                      <h1 className="text-3xl font-bold text-white">
-                          Accessibility Analyzer
-                      </h1>
-                  </div>
+            <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05)] flex items-center justify-center">
+                  <BiAccessibility className="text-white text-3xl mx-auto" />
+                </div>
+                <h1 className="text-2xl sm:text-3xl font-bold text-white">
+                  Accessibility Analyzer
+                </h1>
               </div>
+            </div>
           </header>
-  
-          <div className="max-w-6xl mx-auto px-6 py-8">
-              {/* URL Input */}
-              <div className="bg-gray-900 rounded-2xl shadow-[8px_8px_16px_rgba(0,0,0,0.4),-8px_-8px_16px_rgba(255,255,255,0.05)] p-8 mb-8">
-                  <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05)] flex items-center justify-center">
-                      <HiOutlineSearch className="text-white text-2xl mx-auto" />
-                      </div>
-                      <span className="text-white">Analyze a Website</span>
-                  </h2>
-                  <div className="flex gap-4">
-                      <input
-                          type="url"
-                          value={url}
-                          onChange={(e) => setUrl(e.target.value)}
-                          placeholder="Enter URL to analyze (e.g., https://example.com)"
-                          disabled={loading}
-                          className="flex-1 bg-gray-900 border-none text-white placeholder-gray-500 rounded-xl px-6 py-4 shadow-[inset_-4px_-4px_8px_rgba(255,255,255,0.05),inset_4px_4px_8px_rgba(0,0,0,0.3)] focus:outline-none focus:shadow-[inset_-6px_-6px_12px_rgba(255,255,255,0.05),inset_6px_6px_12px_rgba(0,0,0,0.3)] transition-all duration-300"
-                          onKeyPress={(e) => e.key === 'Enter' && handleAnalyze()}
-                      />
-                      <button
-                          onClick={handleAnalyze}
-                          disabled={loading || !url}
-                          className="bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 disabled:from-gray-700 disabled:to-gray-800 disabled:cursor-not-allowed text-white px-8 py-4 rounded-xl font-medium shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] hover:shadow-[inset_-3px_-3px_6px_rgba(255,255,255,0.05),inset_3px_3px_6px_rgba(0,0,0,0.3)] active:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.05),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
+      
+          <div className="max-w-6xl mx-auto px-2 sm:px-6 py-4 sm:py-8">
+            {/* URL Input */}
+            <div className="bg-gray-900 rounded-2xl shadow-[8px_8px_16px_rgba(0,0,0,0.4),-8px_-8px_16px_rgba(255,255,255,0.05)] p-4 sm:p-8 mb-6 sm:mb-8">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05)] flex items-center justify-center">
+                  <HiOutlineSearch className="text-white text-2xl mx-auto" />
+                </div>
+                <span className="text-white">Analyze a Website</span>
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <input
+                  type="url"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  placeholder="Enter URL to analyze (e.g., https://example.com)"
+                  disabled={loading}
+                  className="w-full sm:w-auto flex-1 bg-gray-900 border-none text-white placeholder-gray-500 rounded-xl px-4 py-3 shadow-[inset_-4px_-4px_8px_rgba(255,255,255,0.05),inset_4px_4px_8px_rgba(0,0,0,0.3)] focus:outline-none focus:shadow-[inset_-6px_-6px_12px_rgba(255,255,255,0.05),inset_6px_6px_12px_rgba(0,0,0,0.3)] transition-all duration-300"
+                  onKeyPress={(e) => e.key === 'Enter' && handleAnalyze()}
+                />
+                <button
+                  onClick={handleAnalyze}
+                  disabled={loading || !url}
+                  className="w-full sm:w-auto bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 disabled:from-gray-700 disabled:to-gray-800 disabled:cursor-not-allowed text-white px-6 py-3 rounded-xl font-medium shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] hover:shadow-[inset_-3px_-3px_6px_rgba(255,255,255,0.05),inset_3px_3px_6px_rgba(0,0,0,0.3)] active:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.05),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
+                >
+                  {loading ? 'Analyzing...' : 'Analyze'}
+                </button>
+              </div>
+            </div>
+      
+            {/* Reports List */}
+            <div className="bg-gray-900 rounded-2xl shadow-[8px_8px_16px_rgba(0,0,0,0.4),-8px_-8px_16px_rgba(255,255,255,0.05)] p-4 sm:p-8">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 gap-2">
+                <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05)] flex items-center justify-center">
+                    <BiHistory className="text-white text-2xl mx-auto" />
+                  </div>
+                  <span>Previously Analyzed Reports</span>
+                </h2>
+                <span className="text-gray-300 text-sm">Latest {Math.min(reports.length, 15)} reports</span>
+              </div>
+      
+              {reports.length === 0 ? (
+                <div className="text-center py-12 sm:py-16 text-gray-400">
+                  <HiOutlineSearch className="text-white text-5xl sm:text-6xl mb-4 sm:mb-6 mx-auto" />
+                  <p className="text-lg sm:text-xl font-medium mb-2 sm:mb-3">No reports yet</p>
+                  <p className="text-gray-500">Analyze a URL to get started</p>
+                </div>
+              ) : (
+                <motion.div
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                  variants={dashboardListContainer}
+                  initial="hidden"
+                  animate="show"
+                >
+                  <AnimatePresence>
+                    {reports.slice(0, 15).map((report, index) => (
+                      <motion.div
+                        key={report._id || index}
+                        className="bg-gray-900 rounded-xl p-4 sm:p-6 shadow-[6px_6px_12px_rgba(0,0,0,0.4),-6px_-6px_12px_rgba(255,255,255,0.05)] hover:shadow-[8px_8px_16px_rgba(0,0,0,0.5),-8px_-8px_16px_rgba(255,255,255,0.05)] transition-all duration-300"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 40, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: "easeInOut" }}
                       >
-                          {loading ? 'Analyzing...' : 'Analyze'}
-                      </button>
-                  </div>
-              </div>
-  
-              {/* Reports List */}
-              <div className="bg-gray-900 rounded-2xl shadow-[8px_8px_16px_rgba(0,0,0,0.4),-8px_-8px_16px_rgba(255,255,255,0.05)] p-8">
-                  <div className="flex justify-between items-center mb-6">
-                      <h2 className="text-xl font-bold text-white flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.4),-4px_-4px_8px_rgba(255,255,255,0.05)] flex items-center justify-center">
-                          <BiHistory className="text-white text-2xl mx-auto" />
+                        <div className="flex flex-col gap-4 h-full">
+                          <div className="flex-1 cursor-pointer min-w-0" onClick={() => setSelectedReport(report)}>
+                            <h3 className="font-bold text-white mb-2 sm:mb-3 text-base sm:text-lg hover:text-blue-400 transition-colors break-all">
+                              {report.url}
+                            </h3>
+                            <div className="bg-gray-900 px-3 py-2 rounded-lg shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] inline-block">
+                              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
+                                <span className="flex items-center gap-1">
+                                  <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                                  {report.totalIssues || report.violations?.length || 0} issues found
+                                </span>
+                                <span className="flex items-center gap-1">
+                                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                  {report.passes || 0} passes
+                                </span>
+                                <span className="hidden sm:inline text-gray-600">|</span>
+                                <span>{new Date(report.createdAt).toLocaleDateString()}</span>
+                              </div>
+                            </div>
                           </div>
-                          <span>Previously Analyzed Reports</span>
-                      </h2>
-                      <span className="text-gray-300">Latest {Math.min(reports.length, 15)} reports</span>
-                  </div>
-  
-                  {reports.length === 0 ? (
-                      <div className="text-center py-16 text-gray-400">
-                            <HiOutlineSearch className="text-white text-6xl mb-6 mx-auto" />
-                          <p className="text-xl font-medium mb-3">No reports yet</p>
-                          <p className="text-gray-500">Analyze a URL to get started</p>
-                      </div>
-                  ) : (
-                    <motion.div
-                    className="space-y-4"
-                    variants={dashboardListContainer}
-                    initial="hidden"
-                    animate="show"
-                  >
-                        <AnimatePresence>
-                          {reports.slice(0, 15).map((report, index) => (
-                              <motion.div
-                              key={report._id || index}
-                              className="bg-gray-900 rounded-xl p-6 shadow-[6px_6px_12px_rgba(0,0,0,0.4),-6px_-6px_12px_rgba(255,255,255,0.05)] hover:shadow-[8px_8px_16px_rgba(0,0,0,0.5),-8px_-8px_16px_rgba(255,255,255,0.05)] transition-all duration-300"
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: 40, scale: 0.95 }}
-                              transition={{ duration: 0.2, ease: "easeInOut" }}
+                          <div className="flex gap-2 sm:gap-3 flex-shrink-0">
+                            <button
+                              onClick={(e) => { e.stopPropagation(); setSelectedReport(report); }}
+                              className="flex-1 bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.05),inset_1px_1px_2px_rgba(0,0,0,0.3)] hover:shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] active:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.05),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
                             >
-                                  <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
-                                      <div className="flex-1 cursor-pointer min-w-0" onClick={() => setSelectedReport(report)}>
-                                          <h3 className="font-bold text-white mb-3 text-lg hover:text-blue-400 transition-colors break-all">
-                                              {report.url}
-                                          </h3>
-                                          <div className="bg-gray-900 px-4 py-2 rounded-lg shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] inline-block">
-                                              <div className="flex items-center gap-4 text-sm text-gray-400">
-                                                  <span className="flex items-center gap-1">
-                                                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                                                      {report.totalIssues || report.violations?.length || 0} issues found
-                                                  </span>
-                                                  <span className="flex items-center gap-1">
-                                                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                                                      {report.passes || 0} passes
-                                                  </span>
-                                                  <span className="text-gray-600">|</span>
-                                                  <span>{new Date(report.createdAt).toLocaleDateString()}</span>
-                                              </div>
-                                          </div>
-                                      </div>
-  
-                                      <div className="flex gap-2 sm:gap-3 flex-shrink-0">
-                                          <button
-                                              onClick={(e) => { e.stopPropagation(); setSelectedReport(report); }}
-                                              className="bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.05),inset_1px_1px_2px_rgba(0,0,0,0.3)] hover:shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] active:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.05),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
-                                          >
-                                              View
-                                          </button>
-                                          <button
-                                              onClick={(e) => { e.stopPropagation(); handleDeleteReport(report._id); }}
-                                              className="bg-gradient-to-br from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.05),inset_1px_1px_2px_rgba(0,0,0,0.3)] hover:shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] active:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.05),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
-                                          >
-                                              Delete
-                                          </button>
-                                      </div>
-                                  </div>
-                              </motion.div>
-                          ))}
-                      </AnimatePresence>
+                              View
+                            </button>
+                            <button
+                              onClick={(e) => { e.stopPropagation(); handleDeleteReport(report._id); }}
+                              className="flex-1 bg-gradient-to-br from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.05),inset_1px_1px_2px_rgba(0,0,0,0.3)] hover:shadow-[inset_-2px_-2px_4px_rgba(255,255,255,0.05),inset_2px_2px_4px_rgba(0,0,0,0.3)] active:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.05),inset_-1px_-1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        </div>
                       </motion.div>
-                  )}
-              </div>
+                    ))}
+                  </AnimatePresence>
+                </motion.div>
+              )}
+            </div>
           </div>
   
           {/* Email Modal */}
