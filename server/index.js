@@ -9,17 +9,9 @@ const analyzeRoutes = require('./routes/analysis');
 const reportRoutes = require('./routes/report');
 const pdfRoutes = require('./routes/pdf');
 
-const app = express(); 
+const app = express();      
 
-const allowedOrigins = [
-    'https://accessibility-analyzer-v3.vercel.app',
-    'http://localhost:3000'
-  ];
-  
-  app.use(cors({
-    origin: allowedOrigins
-  }));
-
+app.use(cors());
 app.use(helmet());
 app.use(express.json({ limit: '10mb'}));
 
@@ -39,7 +31,7 @@ app.use('/api', reportRoutes);
 app.use('/api', analyzeRoutes);
 app.use('/api', pdfRoutes);
 
-app.listen(process.env.PORT || 4000, () => {        
-    console.log(`Server is running on port ${process.env.PORT || 4000}`);    
+app.listen(process.env.PORT, () => {        
+    console.log(`Server is running on port ${process.env.PORT}`);    
 });
 

@@ -225,11 +225,8 @@ const generatePDF = async (report) => {
             '--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--single-process',
-            '--no-zygote'
-        ],
-        executablePath: puppeteer.executablePath()
+            '--disable-web-security'
+        ]
     });
 
     try {
