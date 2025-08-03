@@ -3,20 +3,20 @@
 <h1 align="center">🌐 Accessibility Analyzer</h1>
 
 <p align="center">
-  <strong>Automated Web Accessibility Testing</strong> · MERN Stack · Powered by axe-core 
+  <strong>🧩 Automated Web Accessibility Testing</strong> · ⚙️ MERN Stack · ♿ Powered by axe-core
 </p>
 
+<!-- Social Stats (No blue underline, no excessive spacing) -->
 <p align="center">
-  <a href="https://github.com/spandan-git-hub/accessibility-analyzer-v3/stargazers">
-    <img src="https://img.shields.io/github/stars/spandan-git-hub/accessibility-analyzer-v3?style=social" alt="GitHub stars">
-  </a>
-  <a href="https://github.com/spandan-git-hub/accessibility-analyzer-v3/fork">
-    <img src="https://img.shields.io/github/forks/spandan-git-hub/accessibility-analyzer-v3?style=social" alt="GitHub forks">
-  </a>
+  <img src="https://img.shields.io/github/stars/spandan-git-hub/accessibility-analyzer-v3?style=social&label=Stars&logo=github" alt="GitHub stars" style="vertical-align: middle; margin-right: 4px;">
+  <img src="https://img.shields.io/github/forks/spandan-git-hub/accessibility-analyzer-v3?style=social&label=Forks&logo=github" alt="GitHub forks" style="vertical-align: middle;">
 </p>
 
-<img src="https://img.shields.io/github/license/spandan-git-hub/accessibility-analyzer-v3?style=flat-square" alt="License">
-<img src="https://img.shields.io/github/last-commit/spandan-git-hub/accessibility-analyzer-v3?style=flat-square" alt="Last Commit">
+<!-- Meta Info -->
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" style="margin-right: 6px;">
+  <img src="https://img.shields.io/github/last-commit/spandan-git-hub/accessibility-analyzer-v3?style=for-the-badge" alt="Last Commit">
+</p>
 
 ---
 
@@ -60,54 +60,53 @@ A comprehensive web accessibility testing tool that automatically analyzes websi
 
 ### 🚀 Features
 
-#### **✅ Automated Analysis**
-- **Real-time URL scanning** with comprehensive accessibility testing
-- **Violation detection** across critical, serious, moderate, and minor impact levels
-- **Detailed issue reporting** with actionable recommendations
-- **Visual impact indicators** for quick assessment
+#### ✅ **Automated Analysis**
+- Real-time URL scanning with comprehensive accessibility testing
+- Violation detection across critical, serious, moderate, and minor levels
+- Detailed issue reports with actionable insights
+- Visual impact indicators for rapid assessment
 
-#### **📊 Report Management**
-- **Persistent storage** in MongoDB with historical tracking
-- **Report comparison** and trend analysis capabilities
-- **Search and filter** through previous analyses
-- **Timeline view** of accessibility improvements
+#### 📊 **Report Management**
+- Persistent storage with historical tracking (MongoDB)
+- Compare and track accessibility trends over time
+- Search, filter, and explore previous scans
+- Timeline views to visualize progress
 
-#### **📄 Export & Sharing**
-- **Professional PDF reports** with detailed findings
-- **Email delivery** of accessibility reports
-- **Download functionality** for offline review
-- **Customizable report templates**
+#### 📄 **Export & Sharing**
+- Professional-grade PDF export of reports
+- Automated email delivery of analysis
+- Downloadable local copies
+- Customizable output templates
 
-#### **🎨 Modern Interface**
-- **Responsive design** optimized for all devices
-- **Dark theme** with neumorphic design elements
-- **Smooth animations** powered by Framer Motion
-- **Intuitive navigation** and user experience
+#### 🎨 **Modern Interface**
+- Fully responsive design (mobile-first)
+- Dark mode with neumorphism aesthetics
+- Smooth transitions with Framer Motion
+- Clean and intuitive navigation
 
 ---
 
 ### 📦 Installation & Setup
 
-#### **Prerequisites**
-- Node.js (v16 or higher)
-- MongoDB database
-- npm or yarn package manager
+#### ✅ Prerequisites
+- Node.js (v16+)
+- MongoDB
+- npm or yarn
 
-#### **Quick Start**
+#### 🚀 Quick Start
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/spandan-git-hub/accessibility-analyzer-v3.git
 cd accessibility-analyzer-v3
 
-# Install client dependencies
+# Install frontend
 cd client
 npm install
 
-# Install server dependencies
+# Install backend
 cd ../server
 npm install
-```
 
 #### **Environment Configuration**
 
@@ -135,7 +134,7 @@ npm start
 ```
 
 **Access Points:**
-- �� **Frontend**: http://localhost:3000
+- 🖥️ **Frontend**: http://localhost:3000  
 - 🔧 **Backend API**: http://localhost:4000
 
 ---
@@ -171,7 +170,7 @@ accessibility-analyzer-v3/
 
 ### 📄 License
 
-This project is licensed under the **ISC License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -180,7 +179,7 @@ This project is licensed under the **ISC License** - see the [LICENSE](LICENSE) 
 **Need help or have questions?**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/spandanmhaske/)
-[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:spandanmhaske@gmail.com)
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:spandanmhaske.work@gmail.com)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://accessibility-analyzer-v3.vercel.app)
 
 ---
